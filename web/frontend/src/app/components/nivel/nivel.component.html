@@ -1,0 +1,21 @@
+<table class="table table-striped caption-top">
+    <caption>Nivel</caption>
+    <thead>
+        <th>ID</th>
+        <th>ENG</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let nivel of list_nivel| paginate: {
+            itemsPerPage: pageSize,
+            currentPage: page,
+            totalItems: count,
+            id:'nivelPage'
+          };
+          let i = index" [class.active]="i == currentIndex">
+            <td>{{ nivel.id }}</td>
+            <td>{{ nivel.ENG }}</td>
+        </tr>
+    </tbody>
+    <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" [responsive]="true"
+        (pageChange)="handlePageChangeNivel($event)" id="nivelPage"></pagination-controls>
+</table>

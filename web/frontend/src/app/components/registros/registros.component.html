@@ -1,0 +1,40 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
+                <label class="btn btn-outline-dark" for="btnradio1"
+                    (click)="registrosChangeView('scroll')">Scroll</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" checked="">
+                <label class="btn btn-outline-dark" for="btnradio3"
+                    (click)="registrosChangeView('manual')">Manual</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div *ngIf="statusView == 'manual'">
+                <app-humedad></app-humedad>
+            </div>
+            <div *ngIf="statusView == 'scroll'">
+                <app-humedad-all></app-humedad-all>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div *ngIf="statusView == 'manual'">
+                <app-nivel></app-nivel>
+            </div>
+            <div *ngIf="statusView == 'scroll'">
+                <app-nivel-all></app-nivel-all>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div *ngIf="statusView == 'manual'">
+                <app-temperatura></app-temperatura>
+            </div>
+            <div *ngIf="statusView == 'scroll'">
+                <app-temperatura-all></app-temperatura-all>
+            </div>
+        </div>
+    </div>
+</div>

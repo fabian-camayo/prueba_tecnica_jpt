@@ -1,0 +1,21 @@
+<table class="table table-striped caption-top">
+    <caption>Temperatura</caption>
+    <thead>
+        <th>ID</th>
+        <th>ENG</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let temperatura of list_temperatura | paginate: {
+            itemsPerPage: pageSize,
+            currentPage: page,
+            totalItems: count,
+            id:'temperaturaPage'
+          };
+          let i = index" [class.active]="i == currentIndex">
+            <td>{{ temperatura.id }}</td>
+            <td>{{ temperatura.ENG }}</td>
+        </tr>
+    </tbody>
+    <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" [responsive]="true"
+    (pageChange)="handlePageChange($event)" id="temperaturaPage"></pagination-controls>
+</table>

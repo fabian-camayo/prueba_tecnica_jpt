@@ -1,0 +1,22 @@
+<table class="table table-striped caption-top">
+  <caption>Humedad</caption>
+  <thead>
+    <th>ID</th>
+    <th>ENG</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let humedad of list_humedad | paginate: {
+            itemsPerPage: pageSize,
+            currentPage: page,
+            totalItems: count,
+            id:'humedadPage'
+          };
+          let i = index" [class.active]="i == currentIndex">
+      <td>{{ humedad.id }}</td>
+      <td>{{ humedad.ENG }}</td>
+    </tr>
+  </tbody>
+  <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" [responsive]="true"
+    (pageChange)="handlePageChange($event)" id="humedadPage"></pagination-controls>
+
+</table>

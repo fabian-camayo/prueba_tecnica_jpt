@@ -1,0 +1,15 @@
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-striped caption-top table-bordered mb-0">
+        <caption>Temperatura</caption>
+        <thead>
+            <th>ID</th>
+            <th>ENG</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let temperatura of list_temperatura">
+                <td>{{ temperatura.id }}</td>
+                <td>{{ temperatura.ENG }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

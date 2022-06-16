@@ -1,0 +1,21 @@
+<table class="table table-striped caption-top">
+    <caption>Indice Ambiental</caption>
+    <thead>
+        <th>ID</th>
+        <th>ENG</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let indiceAmbiental of list_indiceAmbiental | paginate: {
+              itemsPerPage: pageSize,
+              currentPage: page,
+              totalItems: count,
+              id:'indiceAmbientalPage'
+            };
+            let i = index" [class.active]="i == currentIndex">
+            <td>{{ indiceAmbiental.id }}</td>
+            <td>{{ indiceAmbiental.ENG }}</td>
+        </tr>
+    </tbody>
+    <pagination-controls previousLabel="Anterior" nextLabel="Siguiente" [responsive]="true"
+        (pageChange)="handlePageChange($event)" id="indiceAmbientalPage"></pagination-controls>
+</table>

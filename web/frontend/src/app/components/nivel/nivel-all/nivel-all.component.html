@@ -1,0 +1,15 @@
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-striped caption-top table-bordered mb-0">
+        <caption>Nivel</caption>
+        <thead>
+            <th>ID</th>
+            <th>ENG</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let nivel of list_nivel">
+                <td>{{ nivel.id }}</td>
+                <td>{{ nivel.ENG }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
